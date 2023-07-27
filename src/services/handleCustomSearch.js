@@ -10,7 +10,7 @@ export async function handleCustomSearch(query){
     const urls = [];
     return axios.get( `${GOOGLE_BASE_URL}&q=${query}`)
     .then((result)=>{
-        result.data.items.filter((item,index)=>index<1).map((url)=>{
+        result.data.items.filter((item,index)=>index<5).map((url)=>{
            return urls.push(url);
         })
         return urls;
